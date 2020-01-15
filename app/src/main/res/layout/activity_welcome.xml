@@ -66,7 +66,6 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:background="@color/colorPrimary"
-            android:onClick="getStarted"
             android:text="@string/get_started"
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
