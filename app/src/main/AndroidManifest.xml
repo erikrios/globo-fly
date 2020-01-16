@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".DestinationListActivity"></activity>
         <activity
             android:name=".WelcomeActivity"
             android:theme="@style/AppTheme.NoActionBar">
