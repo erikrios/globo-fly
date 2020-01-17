@@ -16,5 +16,9 @@ class DestinationListActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolBar)
         binding.toolBar.title
+
+        binding.fab.setOnClickListener {
+            // Intent code here
+        }
     }
 }
