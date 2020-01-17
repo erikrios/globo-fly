@@ -1,11 +1,10 @@
 package com.erikriosetiawan.globofly.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.erikriosetiawan.globofly.R
 import com.erikriosetiawan.globofly.databinding.ActivityDestinationListBinding
-import com.erikriosetiawan.globofly.helpers.DestinationAdapter
 
 class DestinationListActivity : AppCompatActivity() {
 
