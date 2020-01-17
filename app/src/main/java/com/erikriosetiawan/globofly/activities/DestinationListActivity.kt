@@ -1,7 +1,8 @@
-package com.erikriosetiawan.globofly
+package com.erikriosetiawan.globofly.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.erikriosetiawan.globofly.R
 
 class DestinationListActivity : AppCompatActivity() {
 

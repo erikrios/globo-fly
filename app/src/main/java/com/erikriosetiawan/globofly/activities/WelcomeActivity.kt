@@ -1,10 +1,11 @@
-package com.erikriosetiawan.globofly
+package com.erikriosetiawan.globofly.activities
 
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import com.erikriosetiawan.globofly.R
 import com.erikriosetiawan.globofly.databinding.ActivityWelcomeBinding
 
 class WelcomeActivity : AppCompatActivity(), View.OnClickListener {
@@ -13,7 +14,9 @@ class WelcomeActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_welcome)
+        binding = DataBindingUtil.setContentView(this,
+            R.layout.activity_welcome
+        )
 
         // To be replaced by retrofit code
         binding.message.text = getString(R.string.message)
