@@ -1,8 +1,8 @@
 package com.erikriosetiawan.globofly.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.erikriosetiawan.globofly.R
@@ -14,7 +14,8 @@ class WelcomeActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,
+        binding = DataBindingUtil.setContentView(
+            this,
             R.layout.activity_welcome
         )
 
@@ -26,7 +27,9 @@ class WelcomeActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             binding.button.id -> {
-                Toast.makeText(this, "Button clicked!", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, DestinationListActivity::class.java)
+                startActivity(intent)
+                finish()
             }
         }
     }
