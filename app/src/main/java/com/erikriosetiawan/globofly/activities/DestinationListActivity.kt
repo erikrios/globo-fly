@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.erikriosetiawan.globofly.R
 import com.erikriosetiawan.globofly.databinding.ActivityDestinationListBinding
+import com.erikriosetiawan.globofly.helpers.DestinationAdapter
 
 class DestinationListActivity : AppCompatActivity() {
 
@@ -20,5 +21,11 @@ class DestinationListActivity : AppCompatActivity() {
         binding.fab.setOnClickListener {
             // Intent code here
         }
+    }
+
+    private fun loadDestinations() {
+
+        // To be replaced by retrofit code
+
     }
 }
