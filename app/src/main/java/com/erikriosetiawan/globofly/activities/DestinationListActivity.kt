@@ -24,6 +24,12 @@ class DestinationListActivity : AppCompatActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        loadDestinations()
+    }
+
     private fun loadDestinations() {
 
         // To be replaced by retrofit code
