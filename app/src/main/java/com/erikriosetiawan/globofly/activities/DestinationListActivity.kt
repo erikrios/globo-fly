@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.erikriosetiawan.globofly.R
 import com.erikriosetiawan.globofly.databinding.ActivityDestinationListBinding
+import com.erikriosetiawan.globofly.helpers.DestinationAdapter
+import com.erikriosetiawan.globofly.helpers.SampleData
 
 class DestinationListActivity : AppCompatActivity() {
 
@@ -25,6 +27,7 @@ class DestinationListActivity : AppCompatActivity() {
     private fun loadDestinations() {
 
         // To be replaced by retrofit code
-
+        binding.destinyRecyclerView.adapter =
+            DestinationAdapter(binding.root.context, SampleData.DESTINATIONS)
     }
 }
