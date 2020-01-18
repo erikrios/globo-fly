@@ -21,6 +21,18 @@ class DestinationDetailActivity : AppCompatActivity() {
         setSupportActionBar(binding.detailToolbar)
         // Show the Up button in the action bar.
         supportActionBar?.setDisplayShowHomeEnabled(true)
+
+        val bundle: Bundle? = intent.extras
+
+        if (bundle?.containsKey(ARG_ITEM_ID)!!) {
+            val id = intent.getIntExtra(ARG_ITEM_ID, 0)
+
+            loadDetails(id)
+
+            initUpdateButton(id)
+
+            initDeleteButton(id)
+        }
     }
 
     private fun loadDetails(id: Int) {
