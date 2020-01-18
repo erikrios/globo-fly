@@ -7,4 +7,9 @@
     <string name="message">Black Friday! Get 50% cash back on saving your first spot.</string>
     <string name="destiny">Destiny</string>
     <string name="just_a_image">Just a Image</string>
+    <string name="city_name">City Name</string>
+    <string name="country_name">Country Name</string>
+    <string name="description">Description</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
 </resources>
