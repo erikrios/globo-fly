@@ -50,6 +50,15 @@ class DestinationDetailActivity : AppCompatActivity() {
         }
     }
 
+    private fun initDeleteButton(id: Int) {
+        binding.btnDelete.setOnClickListener {
+
+            // To be replaced by retrofit code
+            SampleData.deleteDestination(id)
+            finish() // Move back to DestinationListActivity
+        }
+    }
+
     companion object {
         const val ARG_ITEM_ID = "item_id"
     }
