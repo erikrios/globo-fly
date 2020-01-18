@@ -17,6 +17,10 @@ class DestinationDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_destination_detail)
+
+        setSupportActionBar(binding.detailToolbar)
+        // Show the Up button in the action bar.
+        supportActionBar?.setDisplayShowHomeEnabled(true)
     }
 
     private fun loadDetails(id: Int) {
