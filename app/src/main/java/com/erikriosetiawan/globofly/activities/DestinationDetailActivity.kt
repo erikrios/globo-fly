@@ -14,4 +14,8 @@ class DestinationDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_destination_detail)
     }
+
+    companion object {
+        const val ARG_ITEM_ID = "item_id"
+    }
 }
