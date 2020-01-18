@@ -1,9 +1,11 @@
 package com.erikriosetiawan.globofly.helpers
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.erikriosetiawan.globofly.activities.DestinationDetailActivity
 import com.erikriosetiawan.globofly.databinding.ListItemBinding
 import com.erikriosetiawan.globofly.models.Destination
 
@@ -23,7 +25,9 @@ class DestinationAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindViews(destinations[position]) {
-            // Intent code here
+            val intent = Intent(context, DestinationDetailActivity::class.java)
+            intent.putExtra(DestinationDetailActivity.ARG_ITEM_ID, destinations[position].id)
+            context.startActivity(intent)
         }
     }
 
