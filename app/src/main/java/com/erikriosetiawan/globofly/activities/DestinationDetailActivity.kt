@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import com.erikriosetiawan.globofly.R
 import com.erikriosetiawan.globofly.databinding.ActivityDestinationDetailBinding
 import com.erikriosetiawan.globofly.helpers.SampleData
+import com.erikriosetiawan.globofly.models.Destination
 
 class DestinationDetailActivity : AppCompatActivity() {
 
@@ -27,6 +28,25 @@ class DestinationDetailActivity : AppCompatActivity() {
             binding.etCountry.setText(destination.country)
 
             binding.collapsingToolbar.title = destination.city
+        }
+    }
+
+    private fun initUpdateButton(id: Int) {
+        binding.btnUpdate.setOnClickListener {
+
+            val city = binding.etCity.text.toString()
+            val description = binding.etDescription.text.toString()
+            val country = binding.etCountry.text.toString()
+
+            // To be replaced by retrofit code
+            val destination = Destination()
+            destination.id = id
+            destination.city = city
+            destination.description = description
+            destination.country = country
+
+            SampleData.updateDestination(destination)
+            finish() // Move back to DestinationListActivity
         }
     }
 
