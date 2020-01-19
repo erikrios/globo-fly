@@ -1,5 +1,6 @@
 package com.erikriosetiawan.globofly.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -20,7 +21,8 @@ class DestinationListActivity : AppCompatActivity() {
         binding.toolBar.title
 
         binding.fab.setOnClickListener {
-            // Intent code here
+            val intent = Intent(this@DestinationListActivity, DestinationCreateActivity::class.java)
+            startActivity(intent)
         }
     }
 
