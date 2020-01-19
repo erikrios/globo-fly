@@ -50,9 +50,9 @@ object SampleData {
     }
 
     fun addDestinations(item: Destination) {
+        COUNT += 1
         item.id = COUNT
         DESTINATIONS.add(item)
-        COUNT += 1
     }
 
     fun getDestinationsById(id: Int): Destination? {
