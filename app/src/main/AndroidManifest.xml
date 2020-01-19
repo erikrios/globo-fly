@@ -11,7 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activities.DestinationCreateActivity"></activity>
+        <activity
+            android:name=".activities.DestinationCreateActivity"
+            android:label="New Destination"
+            android:parentActivityName=".activities.DestinationListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.DestinationListActivity" />
+        </activity>
         <activity
             android:name=".activities.DestinationDetailActivity"
             android:label="Destination Detail"
