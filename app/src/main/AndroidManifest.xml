@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activities.DestinationCreateActivity"></activity>
         <activity
             android:name=".activities.DestinationDetailActivity"
             android:label="Destination Detail"
