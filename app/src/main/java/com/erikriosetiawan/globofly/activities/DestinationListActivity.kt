@@ -7,7 +7,6 @@ import androidx.databinding.DataBindingUtil
 import com.erikriosetiawan.globofly.R
 import com.erikriosetiawan.globofly.databinding.ActivityDestinationListBinding
 import com.erikriosetiawan.globofly.helpers.DestinationAdapter
-import com.erikriosetiawan.globofly.helpers.SampleData
 import com.erikriosetiawan.globofly.models.Destination
 import com.erikriosetiawan.globofly.services.DestinationService
 import com.erikriosetiawan.globofly.services.ServiceBuilder
