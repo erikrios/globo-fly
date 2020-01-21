@@ -20,4 +20,8 @@ object ServiceBuilder {
 
     // Create Retrofit Instance
     private val retrofit = builder.build()
+
+    fun <T> buildService(serviceType: Class<T>): T {
+        return retrofit.create(serviceType)
+    }
 }
