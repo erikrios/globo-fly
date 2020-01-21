@@ -60,7 +60,7 @@ class DestinationListActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<List<Destination>>, t: Throwable) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
             }
         })
     }
