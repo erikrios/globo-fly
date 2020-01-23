@@ -77,6 +77,8 @@ class DestinationListActivity : AppCompatActivity() {
                 }
             }
 
+            // Invoked in case of Network Error or Establishing connection with Server
+            // or Error creating Http Request or Error Processing Http Response
             override fun onFailure(call: Call<List<Destination>>, t: Throwable) {
 
             }
