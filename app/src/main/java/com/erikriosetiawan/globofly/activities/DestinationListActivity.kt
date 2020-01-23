@@ -72,7 +72,7 @@ class DestinationListActivity : AppCompatActivity() {
                     Toast.makeText(
                         this@DestinationListActivity,
                         "Failed to retrieve items",
-                        Toast.LENGTH_SHORT
+                        Toast.LENGTH_LONG
                     ).show()
                 }
             }
