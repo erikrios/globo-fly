@@ -2,6 +2,7 @@ package com.erikriosetiawan.globofly.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.erikriosetiawan.globofly.R
@@ -56,6 +57,12 @@ class DestinationListActivity : AppCompatActivity() {
                     val destinationList = response.body()
                     binding.destinyRecyclerView.adapter =
                         destinationList?.let { DestinationAdapter(binding.root.context, it) }
+                } else { // Application-level failure
+                    Toast.makeText(
+                        this@DestinationListActivity,
+                        "Failed to retrieve items",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
 
