@@ -15,7 +15,7 @@ object ServiceBuilder {
     private val logger = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
     // Create OkHttp Client
-    private val okHttp = OkHttpClient.Builder()
+    private val okHttp = OkHttpClient.Builder().addInterceptor(logger)
 
     // Create Retrofit Builder
     private val builder = Retrofit.Builder().baseUrl(URL)
