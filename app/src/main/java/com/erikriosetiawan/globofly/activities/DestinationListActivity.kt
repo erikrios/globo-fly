@@ -49,14 +49,19 @@ class DestinationListActivity : AppCompatActivity() {
 
         requestCall.enqueue(object : Callback<List<Destination>> {
 
+
+            // If you receive a HTTP Response, then this method is executed
+            // Your status code will decide if your Http Response is Success or Error
             override fun onResponse(
                 call: Call<List<Destination>>,
                 response: Response<List<Destination>>
             ) {
                 if (response.isSuccessful) {
+                    // Your status code is in the range of 200 to 299
                     val destinationList = response.body()
                     binding.destinyRecyclerView.adapter =
                         destinationList?.let { DestinationAdapter(binding.root.context, it) }
+                    // Your status code is in the range of 300's, 400's and 500's
                 } else { // Application-level failure
                     Toast.makeText(
                         this@DestinationListActivity,
