@@ -61,6 +61,12 @@ class DestinationListActivity : AppCompatActivity() {
                     val destinationList = response.body()
                     binding.destinyRecyclerView.adapter =
                         destinationList?.let { DestinationAdapter(binding.root.context, it) }
+                } else if (response.code() == 401) {
+                    Toast.makeText(
+                        this@DestinationListActivity,
+                        "Your session has expired. Please login again.",
+                        Toast.LENGTH_LONG
+                    ).show()
                     // Your status code is in the range of 300's, 400's and 500's
                 } else { // Application-level failure
                     Toast.makeText(
