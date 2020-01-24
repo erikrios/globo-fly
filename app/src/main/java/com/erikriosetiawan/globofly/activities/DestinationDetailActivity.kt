@@ -78,7 +78,6 @@ class DestinationDetailActivity : AppCompatActivity() {
                 ).show()
             }
         })
-
     }
 
     private fun initUpdateButton(id: Int) {
