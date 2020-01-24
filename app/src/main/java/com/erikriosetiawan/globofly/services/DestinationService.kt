@@ -9,7 +9,7 @@ import retrofit2.http.Query
 interface DestinationService {
 
     @GET("destination")
-    fun getDestinationList(@Query("country") country: String?): Call<List<Destination>>
+    fun getDestinationList(@Query("country") country: String?, @Query("count") count: String?): Call<List<Destination>>
 
     @GET("destination/{id}")
     fun getDestination(@Path("id") id: Int): Call<Destination>
