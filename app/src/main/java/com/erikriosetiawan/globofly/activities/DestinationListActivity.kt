@@ -53,7 +53,6 @@ class DestinationListActivity : AppCompatActivity() {
 
         requestCall.enqueue(object : Callback<List<Destination>> {
 
-
             // If you receive a HTTP Response, then this method is executed
             // Your status code will decide if your Http Response is Success or Error
             override fun onResponse(
