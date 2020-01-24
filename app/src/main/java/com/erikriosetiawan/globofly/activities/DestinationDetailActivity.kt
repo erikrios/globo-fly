@@ -46,7 +46,6 @@ class DestinationDetailActivity : AppCompatActivity() {
         // To be replaced by retrofit code
 //        val destination = SampleData.getDestinationsById(id)
 
-
         val destinationService = ServiceBuilder.buildService(DestinationService::class.java)
         val requestCall = destinationService.getDestination(id)
 
