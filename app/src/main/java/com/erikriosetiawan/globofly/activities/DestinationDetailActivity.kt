@@ -3,12 +3,18 @@ package com.erikriosetiawan.globofly.activities
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.erikriosetiawan.globofly.R
 import com.erikriosetiawan.globofly.databinding.ActivityDestinationDetailBinding
 import com.erikriosetiawan.globofly.helpers.SampleData
 import com.erikriosetiawan.globofly.models.Destination
+import com.erikriosetiawan.globofly.services.DestinationService
+import com.erikriosetiawan.globofly.services.ServiceBuilder
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class DestinationDetailActivity : AppCompatActivity() {
 
@@ -38,15 +44,41 @@ class DestinationDetailActivity : AppCompatActivity() {
     private fun loadDetails(id: Int) {
 
         // To be replaced by retrofit code
-        val destination = SampleData.getDestinationsById(id)
+//        val destination = SampleData.getDestinationsById(id)
 
-        destination?.let {
-            binding.etCity.setText(destination.city)
-            binding.etDescription.setText(destination.description)
-            binding.etCountry.setText(destination.country)
 
-            binding.collapsingToolbar.title = destination.city
-        }
+        val destinationService = ServiceBuilder.buildService(DestinationService::class.java)
+        val requestCall = destinationService.getDestination(id)
+
+        requestCall.enqueue(object : Callback<Destination> {
+            override fun onResponse(call: Call<Destination>, response: Response<Destination>) {
+                if (response.isSuccessful) {
+                    val destination = response.body()
+                    destination?.let {
+                        binding.etCity.setText(destination.city)
+                        binding.etDescription.setText(destination.description)
+                        binding.etCountry.setText(destination.country)
+
+                        binding.collapsingToolbar.title = destination.city
+                    }
+                } else {
+                    Toast.makeText(
+                        this@DestinationDetailActivity,
+                        "Failed to retrieve details",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            }
+
+            override fun onFailure(call: Call<Destination>, t: Throwable) {
+                Toast.makeText(
+                    this@DestinationDetailActivity,
+                    "Failed to retrieve details $t",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        })
+
     }
 
     private fun initUpdateButton(id: Int) {
