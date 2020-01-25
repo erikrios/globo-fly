@@ -17,7 +17,6 @@ class DestinationCreateActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_destination_create)
 
         setSupportActionBar(binding.toolBar)
-        val context = this
 
         // Show the Up Button in the action bar
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
