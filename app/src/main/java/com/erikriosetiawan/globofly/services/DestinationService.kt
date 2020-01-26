@@ -8,8 +8,7 @@ interface DestinationService {
 
     @GET("destination")
     fun getDestinationList(
-        @QueryMap filter: HashMap<String, String>,
-        @Header("Accept-Language") language: String
+        @QueryMap filter: HashMap<String, String>
     ): Call<List<Destination>>
 
     @GET("destination/{id}")
