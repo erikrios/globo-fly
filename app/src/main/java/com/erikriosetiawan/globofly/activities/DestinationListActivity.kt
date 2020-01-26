@@ -51,6 +51,9 @@ class DestinationListActivity : AppCompatActivity() {
 
         val requestCall = destinationService.getDestinationList(filter)
 
+//        requestCall.cancel()
+//        requestCall.isCanceled
+
         requestCall.enqueue(object : Callback<List<Destination>> {
 
             // If you receive a HTTP Response, then this method is executed
