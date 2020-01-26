@@ -36,7 +36,10 @@ object ServiceBuilder {
     }
 
     // Create OkHttp Client
-    private val okHttp = OkHttpClient.Builder().addInterceptor(logger)
+    private val okHttp =
+        OkHttpClient.Builder()
+            .addInterceptor(headerInterceptor)
+            .addInterceptor(logger)
 
     // Create Retrofit Builder
     private val builder = Retrofit.Builder().baseUrl(URL)
