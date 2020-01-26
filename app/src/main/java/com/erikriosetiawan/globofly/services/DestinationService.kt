@@ -6,7 +6,6 @@ import retrofit2.http.*
 
 interface DestinationService {
 
-    @Headers("x-device-type: Android", "x-foo: bar")
     @GET("destination")
     fun getDestinationList(
         @QueryMap filter: HashMap<String, String>,
