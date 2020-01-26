@@ -86,15 +86,32 @@ class DestinationDetailActivity : AppCompatActivity() {
             val description = binding.etDescription.text.toString()
             val country = binding.etCountry.text.toString()
 
-            // To be replaced by retrofit code
-            val destination = Destination()
-            destination.id = id
-            destination.city = city
-            destination.description = description
-            destination.country = country
+            val destinationService = ServiceBuilder.buildService(DestinationService::class.java)
+            val requestCall = destinationService.updateDestination(id, city, description, country)
 
-            SampleData.updateDestination(destination)
-            finish() // Move back to DestinationListActivity
+            requestCall.enqueue(object : Callback<Destination> {
+
+                override fun onResponse(call: Call<Destination>, response: Response<Destination>) {
+                    if (response.isSuccessful) {
+                        finish() // Move back to DestinationListActivity
+                        var updateDestination = response.body() // Use it or ignore It
+                    } else {
+                        Toast.makeText(
+                            this@DestinationDetailActivity,
+                            "Failed to update item",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<Destination>, t: Throwable) {
+                    Toast.makeText(
+                        this@DestinationDetailActivity,
+                        "Failed to update item",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            })
         }
     }
 
